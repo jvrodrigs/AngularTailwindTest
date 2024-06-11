@@ -27,7 +27,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts":  ["./node_modules/@material-tailwind/html/scripts/ripple.js"]
           },
           "configurations": {
             "production": {
@@ -94,5 +94,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "384bfe18-da84-4844-a37e-2e3641184322"
   }
 }
