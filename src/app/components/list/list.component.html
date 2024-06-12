@@ -32,7 +32,7 @@
 </div>
 <ng-container *ngIf="data && data.length > 0; else notPopulate">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-    <div class="group container relative flex flex-col justify-center mt-6 text-gray-700 bg-white hover:bg-[#515F4E] shadow-md bg-clip-border rounded-xl w-65 pt-4 cursor-pointer"
+    <div class="group container relative flex flex-col justify-center mt-6 text-gray-700 bg-white hover:bg-[#102C57] shadow-md bg-clip-border rounded-xl w-65 pt-4 cursor-pointer"
          *ngFor="let user of data" (click)="handlerClickCard(user.login)">
       <div class="flex flex-col items-center p-6">
         <img
@@ -40,23 +40,12 @@
           alt="avatar"
           class="relative mb-3 inline-block h-[74px] w-[74px] !rounded-full object-cover object-center"
         />
-        <h5 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 group-hover:text-[#C2976B]">
+        <h5 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 group-hover:text-white">
           {{user.login}}
         </h5>
-        <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit group-hover:text-[#C2976B]">
-          Access repositories
+        <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit group-hover:text-white">
+          Click to access the repositories!
         </p>
-      </div>
-      <div class="flex justify-end p-6 pt-0">
-        <button
-          class="flex items-center gap-2 px-4 py-2 font-sans text-xs font-bold text-center text-gray-900 group-hover:text-[#C2976B] uppercase align-middle transition-all rounded-lg select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20"
-          type="button">
-          Learn More
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-               stroke="currentColor" class="w-4 h-4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
-          </svg>
-        </button>
       </div>
     </div>
   </div>

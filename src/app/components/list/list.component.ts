@@ -3,6 +3,7 @@ import {FormControl} from "@angular/forms";
 import {GitHubApiModel} from "../../core/models/GitHubApi.model";
 import {GithubService} from "../../core/services/github.service";
 import {debounceTime, distinctUntilChanged} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-list',
@@ -14,7 +15,10 @@ export class ListComponent implements OnInit{
   itemsPerPageControl = new FormControl(10);
   data!: GitHubApiModel[];
 
-  constructor(private gitHubService: GithubService) {}
+  constructor(
+    private gitHubService: GithubService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.searchControl.valueChanges.pipe(
@@ -50,13 +54,6 @@ export class ListComponent implements OnInit{
   }
 
   handlerClickCard(user: string) {
-    console.log(`Get Info User: ${user}..`);
-    this.gitHubService.getInfoByLogin(user).subscribe(res => {
-      console.log(res);
-    });
-
-    this.gitHubService.getReposByLogin(user).subscribe(res => {
-      console.log(res);
-    })
+    this.router.navigate([`/repo/${user}`]);
   }
 }
